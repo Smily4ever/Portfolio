@@ -64,7 +64,12 @@ div img{
 }
 
 @keyframes barquito {
-    
+    0%,100%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(-300px);
+    }
 }
 #peces{
     width: 49px;
