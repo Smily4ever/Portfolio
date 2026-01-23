@@ -68,7 +68,7 @@ div img{
         transform: translateX(0);
     }
     50%{
-        transform: translateX(-300px);
+        transform: translateX(-500px);
     }
 }
 #peces{
