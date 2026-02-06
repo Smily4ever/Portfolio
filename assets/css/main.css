@@ -116,6 +116,11 @@ h6 {
   /*Su animacion al ser igual que en el index, lo reusamos del crado para el index*/
 }
 
+.filter-app{
+  height: 40vh;
+  
+}
+
 /* PHP Email Form Messages
 ------------------------------*/
 .php-email-form .error-message {
