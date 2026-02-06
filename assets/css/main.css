@@ -101,8 +101,19 @@ h6 {
 /* imagen cabecera */
 
 .heading {
-  background-image: url("../img/patroncuadradro.jpg");
-  background-size: cover;
+  /* background-image: url("../img/patroncuadradro.jpg");
+  background-size: cover;*/
+  color: #FFFFFF;
+    font-weight: bold;
+    --sz: 4.5px;
+    --ts: 50% / calc(var(--sz) * 10) calc(var(--sz) * 17.5);
+     animation: rotateColors 30s linear infinite;
+
+    background: 
+        conic-gradient(from 120deg at 50% 83.5%, var(--c1) 0 120deg, #fff0 0 360deg) var(--ts),
+        conic-gradient(from -60deg at 50% 16.5%, var(--c1) 0 120deg, #fff0 0 360deg) var(--ts),
+        conic-gradient(from 0deg at 50% 50%, var(--c2) 0 60deg, var(--c1) 0 120deg, var(--c3) 0 180deg, var(--c2) 0 240deg, var(--c1) 0 300deg, var(--c3) 0 360deg) var(--ts) !important;
+  /*Su animacion al ser igual que en el index, lo reusamos del crado para el index*/
 }
 
 /* PHP Email Form Messages
@@ -704,6 +715,65 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+/*fondo cubos con css*/
+@property --c1 {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #747474;
+}
+
+@property --c2 {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #4B4B4B;
+}
+
+@property --c3 {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #2A2A2A;
+}
+.hero {
+  /*color y font se añade para que podamos ver mejor las letras*/
+    color: #FFFFFF;
+    font-weight: bold;
+    --sz: 4.5px;
+    --ts: 50% / calc(var(--sz) * 10) calc(var(--sz) * 17.5);
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Aplicamos la animación: 30s total (10s por cada rotación de color) */
+    animation: rotateColors 30s linear infinite;
+
+    background: 
+        conic-gradient(from 120deg at 50% 83.5%, var(--c1) 0 120deg, #fff0 0 360deg) var(--ts),
+        conic-gradient(from -60deg at 50% 16.5%, var(--c1) 0 120deg, #fff0 0 360deg) var(--ts),
+        conic-gradient(from 0deg at 50% 50%, var(--c2) 0 60deg, var(--c1) 0 120deg, var(--c3) 0 180deg, var(--c2) 0 240deg, var(--c1) 0 300deg, var(--c3) 0 360deg) var(--ts) !important;
+}
+@keyframes rotateColors {
+    0%, 100% {
+        --c1: #2A2A2A;
+        --c2: #6f6c71;
+        --c3: #4B4B4B;
+    }
+    33.33% {
+        --c1: #4B4B4B;
+        --c2: #2A2A2A;
+        --c3: #747474;
+    }
+    66.66% {
+        --c1: #4B4B4B;
+        --c2: #747474;
+        --c3: #2A2A2A;
+    }
+}
+
+/*
+este hero es lo que estaba antes de hacer cubos por css
 .hero {
   color: black;
   width: 100%;
@@ -716,8 +786,7 @@ section,
   background-image: url("../img/patroncuadradro.jpg");
   background-size: cover;
 }
-
-/* .hero img {
+.hero img {
   position: absolute;
   inset: 0;
   display: block;
@@ -1402,6 +1471,7 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+  background-color: #000000;
 }
 
 /*--------------------------------------------------------------
