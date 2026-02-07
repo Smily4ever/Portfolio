@@ -536,6 +536,57 @@ h6 {
   padding-top: 5px;
 }
 
+/*Hover para las redes sociales y eso*/
+/* Contenedor de cada par icono-texto */
+.social-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 15px; /* Espacio horizontal entre iconos */
+}
+
+/* Estilo para el icono */
+.social-container a {
+  font-size: 24px;
+  color: #333;
+  transition: color 0.3s;
+}
+
+/* Estilo para el div/p del texto */
+.hover-text {
+  position: absolute;
+  top: 100%;       /* Lo posiciona justo debajo del icono */
+  margin-top: 8px; /* Separación pequeña */
+  background-color: #333;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+  
+  /* Estado inicial: Invisible */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(-10px); /* Efecto de subida */
+}
+
+/* Acción al hacer hover sobre el contenedor */
+.social-container:hover .hover-text {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0); /* Vuelve a su sitio */
+}
+
+/* Cambio de color del icono opcional */
+.social-container:hover a {
+  color: #007bff;
+}
+
+
+
+
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
@@ -1007,6 +1058,17 @@ este hero es lo que estaba antes de hacer cubos por css
 .interests .features-item:hover h3 a {
   color: var(--accent-color);
 }
+
+.tech-icon {
+  height: 40px;
+  margin-right: 15px; /* Espacio entre la imagen y el texto */
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.features-item:hover .tech-icon {
+  transform: scale(1.2);
+}
+
 
 /*--------------------------------------------------------------
 # Testimonials Section
